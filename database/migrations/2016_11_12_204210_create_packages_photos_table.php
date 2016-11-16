@@ -16,6 +16,7 @@ class CreatePackagesPhotosTable extends Migration
         Schema::create('packages_photos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('package_id');
+            $table->string('name');
             $table->string('path');
             $table->string('thumbnail_path');
             $table->timestamps();

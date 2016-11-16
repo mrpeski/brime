@@ -42,76 +42,24 @@
             <main class="col-lg-9">
                 <h1>Vacation Packages</h1>
                 <div class="row">
+                    @foreach( $listing as $card ) 
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="cardh"></div>
-                            <div class="cardimg"></div>
+                            <div class="cardimg">
+                            @if( $card->photos->count() )
+                                <img src="/{{ $card->photos->first()->thumbnail_path }}"></div>
+                            @endif
                             <div class="cardb"> 
                                 <div class="pull-left">
-                                    <h4 class=""> Dubai </h4>
-                                    <p class="small">24+ Locations</p>
+                                    <a href="/packages/{{$card->id}}"><h4 class="">{{ $card->country }}</h4></a>
+                                    <p class="small">{{ '$' . money_format($card->price, 1) }}</p>
                                 </div>
-                                <a href="#" class="btn btn-primary pull-right">Browse</a>
+                                <a href="/packages/{{$card->id}}" class="btn btn-primary pull-right">Browse</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="cardh"></div>
-                            <div class="cardimg"></div>
-                            <div class="cardb"></div>
-                        </div>
-                    </div>              
-                </div>
+                    @endforeach
                 <div class="col-lg-12">
                     <a href="#" class="pull-right">More Packages >></a>
                 </div>

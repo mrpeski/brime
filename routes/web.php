@@ -3,9 +3,7 @@
 
 use App\Page;
 
-Route::get('/', function () {
-    return view('pages/index');
-});
+Route::get('/', 'PagesController@index');
 
 
 Route::get('visa-assistance', [ 'as' => 'front_visa', 'uses' => 'PagesController@visa']);
@@ -14,6 +12,12 @@ Route::get('enquiry', [ 'as' => 'front_enquiry', 'uses' => 'PagesController@enqu
 Route::post('enquiry', [ 'as' => 'post_enquiry', 'uses' => 'PagesController@postEnquiry']);
 
 Route::get('/pages/{id}', [ 'as' => 'static', 'uses' => 'PagesController@staatic']);
+
+Route::get('/packages/{id}', [ 'as' => 'single', 'uses' => 'PackagesController@display']);
+
+Route::post('/packages/{id}', [ 'as' => 'single_post', 'uses' => 'PackagesController@book']);
+
+
 
 // Route::resource('test', 'TestController');
 

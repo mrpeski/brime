@@ -7,6 +7,9 @@
 	@foreach( $packages as $package )
 			<li>
 				<a href="#{{ $package->pid }}">{{ $package->name }}</a>
+				@if( $package->photos->count() )
+					<img src="/{{ $package->photos->first()->thumbnail_path }}" alt="">
+				@endif
 				<p>{!! $package->description !!}</p>
 				<p>{!! $package->city !!}</p>
 				<p>{!! $package->country !!}</p>

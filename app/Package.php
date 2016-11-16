@@ -22,5 +22,11 @@ class Package extends Model
     {
     	return $this->photos()->save($photo);
     }
+
+
+    public function setAttachmentPath() {
+    	$this->attachment_path = $this->photos->first()->toArray()['thumbnail_path'];
+    }
+    
     
 }

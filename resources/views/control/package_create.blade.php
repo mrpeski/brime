@@ -11,24 +11,24 @@
 		</ul>
 	</div>
 	@endif
-	{{ Form::open([ 'method' => 'PATCH', ]) }}
-		<label for="title">Package Title</label>
-		<input type="text" name="title" class="" id="" value="">
+	{{ Form::open([ 'method' => 'POST', ]) }}
+		<label for="name">Package Title</label>
+		<input type="text" name="name" class="" id="" value="">
 
-		<label for="title">Package Type</label>
-		<input type="text" name="title" class="" id="" value="">
+		<label for="type">Package Type</label>
+		<input type="text" name="type" class="" id="" value="">
 
-		<label for="content">Package Description</label>
-		<textarea name="content" id="content" cols="30" rows="10"></textarea>
+		<label for="description">Package Description</label>
+		<textarea name="description" id="content" cols="30" rows="10"></textarea>
 
-		<label for="title">Package Price</label>
-		<input type="text" name="title" class="" id="" value="">
+		<label for="price">Package Price</label>
+		<input type="text" name="price" class="" id="" value="">
 
-		<label for="title">City</label>
-		<input type="text" name="title" class="" id="" value="">		
+		<label for="city">City</label>
+		<input type="text" name="city" class="" id="" value="">		
 
-		<label for="title">Country</label>
-		<input type="text" name="title" class="" id="" value="">
+		<label for="country">Country</label>
+		<input type="text" name="country" class="" id="" value="">
 
 		<label for="attachment">Upload Images</label>
 		<input type="file" name="attachment">

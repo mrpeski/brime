@@ -12,26 +12,26 @@
 	</div>
 	@endif
 	{{ Form::open([ 'method' => 'PATCH', ]) }}
-		<label for="title">Package Title</label>
-		<input type="text" name="title" class="" id="" value="{{$package->name}}">
+		<label for="name">Package Title</label>
+		<input type="text" name="name" class="" id="" value="{{$package->name}}">
 
-		<label for="title">Package Type</label>
-		<input type="text" name="title" class="" id="" value="{{$package->type}}">
+		<label for="type">Package Type</label>
+		<input type="text" name="type" class="" id="" value="{{$package->type}}">
 
-		<label for="content">Package Description</label>
-		<textarea name="content" id="content" cols="30" rows="10">{{$package->description}}</textarea>
+		<label for="description">Package Description</label>
+		<textarea name="description" id="content" cols="30" rows="10">{{$package->description}}</textarea>
 
-		<label for="title">Package Price</label>
-		<input type="text" name="title" class="" id="" value="{{$package->price}}">
+		<label for="price">Package Price</label>
+		<input type="text" name="price" class="" id="" value="{{$package->price}}">
 
-		<label for="title">City</label>
-		<input type="text" name="title" class="" id="" value="{{$package->city}}">		
+		<label for="city">City</label>
+		<input type="text" name="city" class="" id="" value="{{$package->city}}">		
 
-		<label for="title">Country</label>
-		<input type="text" name="title" class="" id="" value="{{$package->country}}">
+		<label for="country">Country</label>
+		<input type="text" name="country" class="" id="" value="{{$package->country}}">
 
-		<label for="attachment">Upload Images</label>
-		<input type="file" name="attachment">
+		<label for="attachment_path">Upload Images</label>
+		<input type="file" name="attachment_path">
 
 		<input type="submit" value="Update">
 	{{ Form::close() }}

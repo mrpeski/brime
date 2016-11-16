@@ -9,6 +9,9 @@ use App\Http\Controllers\Controller;
 use App\Package;
 use App\PackagesPhoto;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
 class PackagesController extends Controller
 {
 
@@ -35,17 +38,16 @@ class PackagesController extends Controller
 
 	public function update(Request $request, $id) 
 	{
-		$page = \App\Package::findorfail($id);
-		$page->title = $request->title;
-		$page->content = $request->content;
-		$page->save();
-		return redirect('control/pages');
+		$package = \App\Package::findorfail($id);
+		$new = $request->all();
+		$package->update($new);
+		return redirect('control/packages');
 	}
 
 	public function store( Request $request ) 
 	{
 		\App\Package::create($request->all());
-		return redirect('control/pages');
+		return redirect('control/packages');
 	}
 
 	public function addPhotos(Request $request, $id) {
@@ -54,12 +56,18 @@ class PackagesController extends Controller
 			'file' => 'required|mimes:jpg,jpeg,png,bmp'
 		]);
 
-		$photo = PackagesPhoto::fromForm($request->file('file'));
+		$photo = $this->makePhoto( $request->file('file') );
 		
 		$package = \App\Package::find($id);
 		$package->addPhoto($photo);
 
+		$package->setAttachmentPath($photo);
+
 		return 'Done';
 	}
 	
+	protected function makePhoto(UploadedFile $file) {
+		return PackagesPhoto::named($file->getClientOriginalName())
+				->store($file);
+	}
 }

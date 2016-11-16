@@ -19,7 +19,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Role::class, function (Faker\Generator $faker) {
     return [
-        'name'     => $faker->randomElement(["admin", "manager", "member", "guest"]);
+        'name'     => $faker->randomElement(["admin", "manager", "member", "guest"])
     ];
 });
 

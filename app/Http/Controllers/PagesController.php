@@ -6,8 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Package;
+
 class PagesController extends Controller
 {
+
+    public function index(Package $packages) {
+        $selected = $packages->all()->take('12');
+        // return $selected->photos();
+        return view('pages.index')->with('listing', $selected);
+    }
+    
     		
     public function visa() {
     	return view('pages.visa');
