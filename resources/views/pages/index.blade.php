@@ -7,21 +7,20 @@
                     <div class="row">
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <div class="amadeus">
-                                
+                                <iframe src="https://www.epower.amadeus.com/discovery/#Page=Flight&SwitchAdvancedSearch=false" frameborder="0"></iframe>
                             </div>
                         </div>
 
                         <div class="col-lg-3">
 
                             <div class="topad">
-                                <a href="#">
-                                <div class="adheader"></div>
-                                </a>
-                                <div class="adbody">
-                                    <h3>Advertisement Header</h3>
-                                </div>
-                                <div class="adfooter">
-                                    <a href="#">Call to Action</a>
+<!--                                 <div>Weather</div>
+ -->                            <div>
+                                     @if(! $weather == null)
+                                    <h3>{{ $city }} <img src="{{ $icon_url }}" alt=""></h3>
+                                    <h4>{{ $temp }} &deg;C</h4>
+                                    <span>{{ $weather->description }}</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>

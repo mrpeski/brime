@@ -43,5 +43,16 @@ class PagesController extends Controller
         return view('pages.static')->with('page', $node);
     }
     
+
+    public function getFlights() {
+        return view('pages.fly');
+    }
+
+
+    public function getHotels() {
+        return view('pages.hotels');
+    }
+    
+    
     
 }

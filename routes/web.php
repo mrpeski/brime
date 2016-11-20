@@ -1,9 +1,47 @@
 <?php
 
-
 use App\Page;
 
+use Cmfcmf\OpenWeatherMap;
+use Cmfcmf\OpenWeatherMap\Exception as OWMException;
+
+use Cmfcmf\OpenWeatherMap\Util\Weather;
+
+use App\Discovery\OWM\FileCache;
+
 Route::get('/', 'PagesController@index');
+
+Route::get('weather', function() {
+
+		$appid = env('OPEN_WEATHER_KEY');
+		$units = 'metric';
+
+		$owm = new OpenWeatherMap($appid, null, new FileCache(), 60);
+		
+		try {
+		    $weather = $owm->getRawWeatherData('Berlin', $units, 'en', $appid, $mode = 'json');
+		} catch(OWMException $e) {
+		    echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
+		} catch(\Exception $e) {
+		    echo 'General exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
+		}
+		// dd($weather);
+		$data = json_decode($weather);
+		
+		dd($data->main->temp);
+		$details = $data->weather;
+
+		//dd($details[0]);
+
+
+		$we = new Weather( $details[0]->id, $details[0]->description, $details[0]->icon );
+		$icon_url = $we->getIconUrl();
+		dd($icon_url);
+
+});
+
+Route::get('find-hotels', 'PagesController@getHotels');
+Route::get('fly', 'PagesController@getFlights');
 
 
 Route::get('visa-assistance', [ 'as' => 'front_visa', 'uses' => 'PagesController@visa']);
@@ -13,7 +51,7 @@ Route::post('enquiry', [ 'as' => 'post_enquiry', 'uses' => 'PagesController@post
 
 Route::get('/pages/{id}', [ 'as' => 'static', 'uses' => 'PagesController@staatic']);
 
-Route::get('/packages/{id}', [ 'as' => 'single', 'uses' => 'PackagesController@display']);
+Route::get('packages/{id}', [ 'as' => 'single', 'uses' => 'PackagesController@display']);
 
 Route::post('/packages/{id}', [ 'as' => 'single_post', 'uses' => 'PackagesController@book']);
 

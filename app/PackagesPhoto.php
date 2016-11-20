@@ -42,7 +42,7 @@ class PackagesPhoto extends Model
 
     protected function makeThumbnail() {
     	    Image::make($this->path)
-    		->fit(200)
+    		->fit(250, 180)
     		->save($this->thumbnail_path);
     }
     

@@ -7,8 +7,8 @@
 		<div class="well">
 			<div class="row">
 					<div class="col-lg-8">
-						<h4>What we offer</h4>
-					</div>
+<!-- 						<h4>What we offer</h4>
+ -->					</div>
 					<div class="col-lg-4">
 						<div class="help-icons pull-right">
 					<!-- 		<button type="button" class="btn btn-icon" id="zoom-in" aria-label="Zoom In">
@@ -22,12 +22,13 @@
 							</button>
 						</div>
 					</div>
-				</div>
+			</div>
+				@if ( $page->id = 11 )
+					<img src="{{ asset('Chairlady.png')}}" alt="" class="pull-left padded">
+				@endif
 				{!! $page->content !!}
 				<hr>
-			</div>
 		</div>
 	</div>
 </div>
-
 @stop
