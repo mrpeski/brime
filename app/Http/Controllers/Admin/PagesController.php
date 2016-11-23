@@ -31,14 +31,14 @@ class PagesController extends Controller
 		$page->title = $request->title;
 		$page->content = $request->content;
 		$page->update();
-		return redirect('control/pages');
+		return redirect('control/pages')->with('message', 'Update Succesful!');
 	}
 
 
 	public function store( PageRequest $request ) 
 	{
 		\App\Page::create($request->all());
-		return redirect('control/pages');
+		return redirect('control/pages')->with('message', 'Page Succesfully Created!');
 	}
 	
 	
@@ -52,7 +52,7 @@ class PagesController extends Controller
         $node = $page->findorFail($pid);
         $pageTitle = $page->title;
         $node->delete();
-        return redirect('control/pages')->with('message', 'Page Succesfully Deleted');
+        return redirect('control/pages')->with('message', 'Page Succesfully Deleted!');
     }
 
 }

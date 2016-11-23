@@ -16,7 +16,7 @@ class PackagesController extends Controller
 {
 
 	public function index(Package $packages) {
-		$packages = $packages->all();
+		$packages = $packages->latest()->get();
 		return view('control.package')->with('packages', $packages);
 	}
 	
@@ -46,6 +46,7 @@ class PackagesController extends Controller
 
 	public function store( Request $request ) 
 	{
+		// dd($request->all());
 		\App\Package::create($request->all());
 		return redirect('control/packages');
 	}

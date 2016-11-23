@@ -62,7 +62,7 @@ Route::post('/packages/{id}', [ 'as' => 'single_post', 'uses' => 'PackagesContro
 Route::group(['prefix' => 'control'], function() {
 	
 	Route::get('pages', [ 'as' => 'page_control', 'uses' => function(Page $pages){
-		$pages = $pages->all();
+		$pages = $pages->latest()->get();
 		return view('control.page')->with('pages', $pages);
 	}]);	
 	Route::get('pages/create', [ 'as' => 'page_create', 'uses' => 'Admin\PagesController@create']);
@@ -77,7 +77,7 @@ Route::group(['prefix' => 'control'], function() {
 
 	Route::get('packages', [ 'as' => 'package_control', 'uses' => 'Admin\PackagesController@index']);
 	Route::get('packages/create', [ 'as' => 'package_create', 'uses' => 'Admin\PackagesController@create']);
-	Route::post('pacckages/create', [ 'as' => 'package_store', 'uses' => 'Admin\PackagesController@store']);
+	Route::post('packages/create', [ 'as' => 'package_store', 'uses' => 'Admin\PackagesController@store']);
 	Route::get('packages/{pid}/edit', [ 'as' => 'package_edit', 'uses' => 'Admin\PackagesController@edit']);
 	Route::patch('packages/{pid}/edit', [ 'as' => 'package_update', 'uses' => 'Admin\PackagesController@update']);
 
@@ -91,3 +91,7 @@ Route::group(['prefix' => 'control'], function() {
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

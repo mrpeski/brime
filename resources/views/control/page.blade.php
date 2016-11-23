@@ -2,13 +2,13 @@
 
 @section('content')
 	@if (session('message'))
-		<div>{{ session('message') }}</div>
+		<div class="alert alert-success">{{ session('message') }}</div>
 	@endif
 	<h1>Pages Listing</h1>
-	<a href="pages/create">Add New Page</a>
+	<a href="pages/create" class="primary-link">Add New Page</a>
 		<ol>
 	@foreach( $pages as $page )
-			<li>
+			<li class="itemm">
 				<a href="#{{ $page->pid }}">{{ $page->title }}</a>
 				<p>{!! $page->content !!}</p>
 				<div>{{ $page->created_at->diffForHumans() }}</div>

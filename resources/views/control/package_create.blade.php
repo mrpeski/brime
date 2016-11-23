@@ -22,7 +22,7 @@
 		<textarea name="description" id="content" cols="30" rows="10"></textarea>
 
 		<label for="price">Package Price</label>
-		<input type="text" name="price" class="" id="" value="">
+		<input type="number" name="price" class="" id="" value="">
 
 		<label for="city">City</label>
 		<input type="text" name="city" class="" id="" value="">		
@@ -30,10 +30,7 @@
 		<label for="country">Country</label>
 		<input type="text" name="country" class="" id="" value="">
 
-		<label for="attachment">Upload Images</label>
-		<input type="file" name="attachment">
-
-		<input type="submit" value="Update">
+		<input type="submit" value="Create">
 	{{ Form::close() }}
 @stop
 

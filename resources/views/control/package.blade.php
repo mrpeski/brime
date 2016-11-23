@@ -2,13 +2,14 @@
 
 @section('content')
 	<h1>Packages Listing</h1>
-	<a href="packages/create">Add New Package</a>
+	<a href="packages/create" class="primary-link">Add New Package</a>
+	<!-- <hr> -->
 		<ol>
 	@foreach( $packages as $package )
-			<li>
+			<li class="itemm">
 				<a href="#{{ $package->pid }}">{{ $package->name }}</a>
 				@if( $package->photos->count() )
-					<img src="/{{ $package->photos->first()->thumbnail_path }}" alt="">
+					<img src="/{{ $package->photos->first()->thumbnail_path }}" alt="" class="pull-right thumbnail">
 				@endif
 				<p>{!! $package->description !!}</p>
 				<p>{!! $package->city !!}</p>

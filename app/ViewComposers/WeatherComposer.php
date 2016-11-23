@@ -23,10 +23,10 @@ class WeatherComposer
 		$appid = env('OPEN_WEATHER_KEY');
 		$units = 'metric';
 		$cache = new FileCache();
-		$owm = new OpenWeatherMap($appid, null, $cache, 600);
+		$owm = new OpenWeatherMap($appid, null, $cache, 60);
 		
 		try {
-		    $weather = $owm->getRawWeatherData(2348773, $units, 'en', $appid, $mode = 'json');
+		    $weather = $owm->getRawWeatherData(2332459, $units, 'en', $appid, $mode = 'json');
 		} catch(OWMException $e) {
 		    echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
 		} catch(\Exception $e) {

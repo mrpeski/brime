@@ -30,9 +30,6 @@
 		<label for="country">Country</label>
 		<input type="text" name="country" class="" id="" value="{{$package->country}}">
 
-		<label for="attachment_path">Upload Images</label>
-		<input type="file" name="attachment_path">
-
 		<input type="submit" value="Update">
 	{{ Form::close() }}
 

@@ -17,9 +17,8 @@
 		<input type="text" name="title" class="" id="">
 		<label for="content">Page Content</label>
 		<textarea name="content" id="content" cols="30" rows="10"></textarea>
-		<label for="attachment">Page attachment</label>
-		<input type="file" name="attachment">
-		<input type="submit" value="Update">
+	
+		<input type="submit" value="Create">
 	</form>
 @stop
 

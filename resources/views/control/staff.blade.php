@@ -2,10 +2,10 @@
 
 @section('content')
 	<h1>Staff Listing</h1>
-	<a href="pages/create">Add New Member</a>
+	<a href="pages/create" class="primary-link">Add New Member</a>
 		<ol>
 	@foreach( $staff as $member )
-			<li>
+			<li class="itemm">
 				<a href="#{{ $member->sid }}">{{ $member->name }}</a>
 				<p>{!! $member->first_name !!}</p>
 				<p>{!! $member->last_name !!}</p>

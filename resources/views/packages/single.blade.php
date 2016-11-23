@@ -13,7 +13,7 @@
 			<hr>
 					<div class="col-lg-12">
 					@foreach( $node->photos as $photo)
-						<img src="/{{ $photo->thumbnail_path }}" alt="">
+						<a href="/{{ $photo->path }}" class="pop"><img src="/{{ $photo->thumbnail_path }}" alt=""></a>
 					@endforeach
 					</div>
 			</div>
@@ -29,4 +29,26 @@
 		</div>
 	</div>
 </div>
+@stop
+
+@section('scripts')
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="{{ asset('js/libs/magnific_popup/jquery.magnific-popup.min.js') }}"></script>
+
+<script>
+	$(document).ready(function(){
+		$('.pop').magnificPopup({
+		  type: 'image',
+		  gallery: {
+			    enabled: true 
+			  }
+		});
+
+		$('.ajax').magnificPopup({
+			closeOnContentClick: false,
+			focus: 'input',
+  			type: 'ajax'
+		});
+	});
+</script>
 @stop

@@ -16,8 +16,7 @@
 		<input type="text" name="title" class="" id="" value="{{$page->title}}">
 		<label for="content">Page Content</label>
 		<textarea name="content" id="content" cols="30" rows="10">{{$page->content}}</textarea>
-		<label for="attachment">Page attachment</label>
-		<input type="file" name="attachment">
+		
 		<input type="submit" value="Update">
 	{{ Form::close() }}
 @stop

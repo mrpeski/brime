@@ -2,31 +2,19 @@
 @section('content')
 <div class="row">
             <div class="container-fluid">
-                <div class="window">
-                    <div class="container">
+                <div id="slides">
+                    <img src="{{asset('imgs/bg.jpg')}}">
+                    <img src="{{asset('imgs/2.jpg')}}">      
+                </div>
+                <!-- <div class="container">
                     <div class="row">
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <div class="amadeus">
                                 <iframe src="https://www.epower.amadeus.com/discovery/#Page=Flight&SwitchAdvancedSearch=false" frameborder="0"></iframe>
                             </div>
                         </div>
-
-                        <div class="col-lg-3">
-
-                            <div class="topad">
-<!--                                 <div>Weather</div>
- -->                            <div>
-                                     @if(! $weather == null)
-                                    <h3>{{ $city }} <img src="{{ $icon_url }}" alt=""></h3>
-                                    <h4>{{ $temp }} &deg;C</h4>
-                                    <span>{{ $weather->description }}</span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                </div>
+                </div> -->
             </div>  
     </div>
     <div class="container">
@@ -168,12 +156,16 @@
             </main>
 
             <aside class="col-lg-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="topad">
+<!--                                 <div>Weather</div>
+-->                            <div>
+                         @if(! $weather == null)
+                        <h3>{{ $city }} <img src="{{ $icon_url }}" alt=""></h3>
+                        <h4>{{ $temp }} &deg;C</h4>
+                        <span>{{ $weather->description }}</span>
+                        @endif
+                    </div>
+                </div>
             </aside>        
         </div>
     </div>
@@ -191,3 +183,38 @@
             </div>
         </div>
 @stop
+
+@section('scripts')
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="{{ asset('js/libs/slidejs/jquery.slides.min.js') }}"></script>
+<script>
+    $(function(){
+      $("#slides").slidesjs({
+      width: 1680,
+      height: 390,
+      navigation: {
+          active: false,
+          effect: "fade" },
+      play: {
+          active: false,
+          effect: "fade",
+          interval: 8000,
+          auto: true,
+          swap: false,
+          pauseOnHover: true,
+          restartDelay: 250
+    },
+      pagination: {
+          active: false,
+          //effect: "fade"
+      },
+      effect: {
+        fade: {
+            speed: 1000,
+            crossfade: true
+        }
+      }
+    });
+  });
+  </script>
+  @stop
