@@ -5,9 +5,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('js/libs/magnific_popup/magnific-popup.css')}}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
 <body>
+<div class="container-fluid">
 <header class="header">
     <div class="container">
         <a href="/"><span class="_lg">DiscoveryTrip</span></a>

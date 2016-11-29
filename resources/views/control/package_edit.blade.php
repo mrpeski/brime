@@ -30,7 +30,7 @@
 		<label for="country">Country</label>
 		<input type="text" name="country" class="" id="" value="{{$package->country}}">
 
-		<input type="submit" value="Update">
+		<input type="submit" value="Update" class="btn btn-primary">
 	{{ Form::close() }}
 
 	<form action="{{ route('package_photos', ['id' => $package->id ]) }}" method="POST" class="dropzone" enctype="multipart/form-data">

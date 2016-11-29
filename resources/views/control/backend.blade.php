@@ -35,8 +35,8 @@
     <body>
         <nav class="nav">
             <div class="logo"><img src="{{asset('logo.png')}}" alt=""></div>
-            <li><a href="{{ route('staff_control') }}" class="nav__items">Manage Users</a></li>
-            <li><a href="#" class="nav__items">Manage Services</a></li>
+            <li><a href="{{ route('staff_control') }}" class="nav__items">Manage Staff</a></li>
+            <li><a href="{{ route('users_control') }}" class="nav__items">Manage Users</a></li>
             <li><a href="{{ route('page_control') }}" class="nav__items">Manage Pages</a></li>
             <li><a href="{{ route('package_control') }}" class="nav__items">Manage Packages</a></li>
         </nav>

@@ -1,10 +1,13 @@
 @extends('blocks')
 @section('content')
-<div class="row">
             <div class="container-fluid">
-                <div id="slides">
-                    <img src="{{asset('imgs/bg.jpg')}}">
-                    <img src="{{asset('imgs/2.jpg')}}">      
+                <div class="row">
+                    <div class="">
+                        <div id="slides" class="col-lg-12 col-xs-12 col-md-12">
+                            <img src="{{asset('imgs/bg.jpg')}}">
+                            <img src="{{asset('imgs/2.jpg')}}">      
+                        </div>
+                    </div>
                 </div>
                 <!-- <div class="container">
                     <div class="row">
@@ -16,21 +19,18 @@
                     </div>
                 </div> -->
             </div>  
-    </div>
     <div class="container">
-        <div class="row">
+       <!--  <div class="row">
             <div class="col-lg-12">
                 
             </div>  
-        </div>
-
-
+        </div> -->
         <div class="row">
-            <main class="col-lg-9">
+            <main class="col-lg-9 col-xs-12">
                 <h1>Vacation Packages</h1>
                 <div class="row">
                     @foreach( $listing as $card ) 
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-xs-12 col-md-6">
                         <div class="card">
                             <div class="cardh"></div>
                             <div class="cardimg">
@@ -51,7 +51,7 @@
                     <a href="#" class="pull-right">More Packages >></a>
                 </div>
 
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-xs-12 col-md-12">
                     <div class="list">
                         <div class="row">
                             <div class="col-lg-6">
@@ -155,7 +155,7 @@
                 </div>
             </main>
 
-            <aside class="col-lg-3">
+            <aside class="col-lg-3 col-xs-12">
                 <div class="topad">
 <!--                                 <div>Weather</div>
 -->                            <div>
@@ -183,7 +183,7 @@
             </div>
         </div>
 @stop
-
+</div> <!-- container wrapper -->
 @section('scripts')
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="{{ asset('js/libs/slidejs/jquery.slides.min.js') }}"></script>

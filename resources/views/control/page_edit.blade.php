@@ -16,10 +16,13 @@
 		<input type="text" name="title" class="" id="" value="{{$page->title}}">
 		<label for="content">Page Content</label>
 		<textarea name="content" id="content" cols="30" rows="10">{{$page->content}}</textarea>
-		
-		<input type="submit" value="Update">
+		<div class="form-group">
+			<input type="submit" value="Update" class="btn btn-primary">
+		</div>
 	{{ Form::close() }}
 @stop
+
+
 
 @section('scripts')
 	  <script src="{{ asset('js/libs/tinymce/tinymce.min.js') }}"></script>

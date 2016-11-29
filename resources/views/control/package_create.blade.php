@@ -29,7 +29,7 @@
 
 		<label for="country">Country</label>
 		<input type="text" name="country" class="" id="" value="">
-
+		
 		<input type="submit" value="Create">
 	{{ Form::close() }}
 @stop

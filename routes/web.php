@@ -89,6 +89,8 @@ Route::group(['prefix' => 'control'], function() {
 	Route::get('staff/{sid}/edit', [ 'as' => 'staff_edit', 'uses' => 'Admin\StaffController@edit']);
 	Route::patch('staff/{sid}/edit', [ 'as' => 'staff_update', 'uses' => 'Admin\StaffController@update']);
 
+	Route::get('users', ['as' => 'users_control', 'uses' => 'Admin\UsersController@index']);
+
 });
 
 
