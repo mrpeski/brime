@@ -11,27 +11,32 @@
 				{{ csrf_field() }}
 				<div class="form-group">
 					<label for="">First Name</label>
-					<input type="text" class="form-control" id="" placeholder="Input field">
+					<input type="text" class="form-control" id="" placeholder="Input field" name="first_name">
 				</div>	
 
 				<div class="form-group">
 					<label for="">Surname</label>
-					<input type="text" class="form-control" id="" placeholder="Input field">
+					<input type="text" class="form-control" id="" placeholder="Input field" name="last_name">
 				</div>
 
 				<div class="form-group">
 					<label for="">Email</label>
-					<input type="text" class="form-control" id="" placeholder="Input field">
+					<input type="text" class="form-control" id="" placeholder="Input field" name="email">
 				</div>	
 
 				<div class="form-group">
 					<label for="">Phone(Home)</label>
-					<input type="text" class="form-control" id="" placeholder="Input field">
+					<input type="text" class="form-control" id="" placeholder="Input field" name="tel">
 				</div>
 
 				<div class="form-group">
 					<label for="">Country</label>
-					<input type="text" class="form-control" id="" placeholder="Input field">
+					<select>
+						@foreach (\App\Http\Utilities\Country::all() as $country['index'] => $country['value'] )
+							<option name="{{$country['value']}}" id="">{{$country['index']}}</option>
+						@endforeach
+					</select>
+					<!-- <input type="text" class="form-control" id="" placeholder="Input field" name="country"> -->
 				</div>
 
 				<div class="form-group">

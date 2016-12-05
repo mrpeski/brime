@@ -8,9 +8,11 @@
 
 		<div class="well">
 			<div class="row">
-			<div>Price: {{ '$' . $node->price }}</div>
-			<div>City: {{ $node->city }}</div>
-			<hr>
+				<div class="col-lg-12">
+					<div>Price: &#8358; {{ $node->price }}</div>
+					<div>City: {{ $node->city }}</div>
+					<hr>
+				</div>
 					<div class="col-lg-12">
 					@foreach( $node->photos as $photo)
 						<a href="/{{ $photo->path }}" class="pop"><img src="/{{ $photo->thumbnail_path }}" alt=""></a>

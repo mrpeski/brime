@@ -40,7 +40,7 @@
                             <div class="cardb"> 
                                 <div class="pull-left">
                                     <a href="/packages/{{$card->id}}"><h4 class="">{{ $card->country }}</h4></a>
-                                    <p class="small">{{ '$' . money_format($card->price, 1) }}</p>
+                                    <p class="small"> &#8358; {{money_format($card->price, 1) }}</p>
                                 </div>
                                 <a href="/packages/{{$card->id}}" class="btn btn-primary pull-right">Browse</a>
                             </div>
