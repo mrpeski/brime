@@ -2,10 +2,11 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\BaseModel;
+// use Illuminate\Database\Eloquent\Model;
 use App\PackagesPhoto;
 
-class Package extends Model
+class Package extends BaseModel
 {
     protected $fillable = [
         'name', 'type', 'description', 'city', 'country', 'price', 'attachment_path'

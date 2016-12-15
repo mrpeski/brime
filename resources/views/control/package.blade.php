@@ -15,7 +15,7 @@
 				<p>{!! $package->city !!}</p>
 				<p>{!! $package->country !!}</p>
 				<p>{!! $package->price !!}</p>
-				<div>{{ $package->created_at->diffForHumans() }}</div>
+				<div title="{{ $package->created_at }}">{{ $package->created_at->diffForHumans() }} {{ $package->publishedDay($package->created_at->dayOfWeek) }} </div>
 				<a href="#delete">Delete</a>
 				<a href="{{route('package_edit', $package->id)}}">Edit</a>
 				<a href="#preview">Preview</a>
